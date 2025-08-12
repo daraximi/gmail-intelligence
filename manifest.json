@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Gmail Intelligence",
+    "version": "0.1",
+    "description": "Analyze email tone and prevent workplace miscommunications. Powered by OpenAI GPT-5",
+    "permissions": ["activeTab", "storage"],
+    "host_permissions": [
+        "*://mail.google.com/*",
+        "*://gmail-intelligence-backend.onrender.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["*://mail.google.com/*"],
+            "js": ["sentiment-analyzer.js", "content.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+        {
+            "resources": ["sentiment-analyzer.js"],
+            "matches": [
+                "*://mail.google.com/*",
+                "*://*.outlook.com/*",
+                "*://gmail-intelligence-backend.onrender.com/*"
+            ]
+        }
+    ]
+}
