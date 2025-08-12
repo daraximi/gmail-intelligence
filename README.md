@@ -18,7 +18,7 @@ It detects tone, provides **real-time suggestions** to improve clarity and profe
 
 ## 📸 Screenshots
 
-*(Add screenshots of the extension UI here)*
+## TODO: Add screenshots here
 
 ---
 
